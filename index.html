@@ -25,26 +25,27 @@
         <h2>🏆 CAREER WINS 🏆</h2>
       </header>
       <main class="main">
-        <div class="blur-filter driver-card" id="driver-1">
+        <section class="blur-filter driver-card" id="driver-1">
           <img
             class="driver-img"
+            id="driver1-img"
             src="img/driver-10.jpg"
             alt="F1 driver number 1"
           />
-          <p class="driver-1--name driver-name" id="driver-name">
-            CHARLES LECLERC
+          <p class="driver-name" id="driver1-name">CHARLES LECLERC</p>
+          <p class="driver-wins">
+            Career wins - <span id="driver1-wins"> ?</span>
           </p>
-          <p class="driver-wins" id="driver-wins">Career wins - ?</p>
-        </div>
-        <div class="blur-filter btns-section">
+        </section>
+        <section class="blur-filter btns-section">
           <p class="description">
             Does <span class="driver-1--name">Charles Leclerc</span> have more
             or less wins in his career than
             <span class="driver-2--name">Sergio Perez</span>?
           </p>
           <div class="start-restart-btns">
-            <button class="btn hidden">New Game</button>
-            <button class="btn">Restart</button>
+            <button class="btn" id="btn--ng">New Game</button>
+            <button class="btn" id="btn--res">Restart</button>
           </div>
           <div class="points-box">
             <p class="points">
@@ -54,19 +55,29 @@
               <span>Rounds</span> <span class="rounds-counter">0</span>
             </p>
           </div>
-        </div>
-        <div class="blur-filter driver-card" id="driver-2">
+          <div class="btns-hel-box">
+            <button class="btn btn--higher">HIGHER</button>
+            <button class="btn btn--even">EVEN</button>
+            <button class="btn btn--lower">LOWER</button>
+          </div>
+          <button class="btn" id="btn--new-pair">New Pair</button>
+        </section>
+        <section class="blur-filter driver-card" id="driver-2">
           <img
             class="driver-img"
+            id="driver2-img"
             src="img/driver-11.jpg"
             alt="F1 driver number 2"
           />
-          <p class="driver-2--name driver-name" id="driver-name">
+          <p class="driver-2--name driver-name" id="driver2-name">
             SERGIO PEREZ
           </p>
-          <p class="driver-wins" id="driver-wins">Career wins - ?</p>
-        </div>
+          <p class="driver-wins" id="driver-wins">
+            Career wins - <span id="driver2-wins"> ?</span>
+          </p>
+        </section>
       </main>
     </div>
   </body>
 </html>
+
