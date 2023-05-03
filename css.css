@@ -131,6 +131,7 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 8rem;
+  margin-bottom: 5rem;
 }
 
 .points-box span {
@@ -143,6 +144,45 @@ h2 {
 .score {
   display: block;
   margin-top: 1rem;
+}
+
+.btns-hel-box {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  transform: translate(50%, 0);
+}
+
+.btn--higher {
+  margin-bottom: 4rem;
+}
+
+.btn--higher:hover {
+  box-shadow: 0px 0px 12px 8px rgba(36, 196, 4, 0.26);
+  transform: translate(0, -6%);
+  background-color: rgba(209, 209, 209, 0.404);
+}
+
+.btn--lower {
+  margin-bottom: 8rem;
+}
+
+.btn--lower:hover {
+  box-shadow: 0px 0px 12px 8px rgba(255, 44, 44, 0.253);
+  transform: translate(0, 6%);
+  background-color: rgba(209, 209, 209, 0.404);
+}
+
+.btn--even {
+  margin-bottom: 4rem;
+}
+
+.btn--lower:active {
+  transform: translate(0, 10%);
+}
+
+.btn--higher:active {
+  transform: translate(0, -2%);
 }
 
 /* ################################# */
@@ -163,6 +203,7 @@ h2 {
 .main {
   height: 80vh;
   display: flex;
+  justify-content: center;
   gap: 4%;
 }
 
@@ -175,6 +216,7 @@ h2 {
 
 .driver-img {
   height: 84%;
+  width: 90%;
   border-radius: 10px;
   margin-bottom: 2rem;
   box-shadow: 0rem 0.4rem 2rem rgba(0, 0, 0, 0.301);
@@ -188,7 +230,8 @@ h2 {
   letter-spacing: 1.8px;
 }
 
-.driver-wins {
+.driver-wins,
+.driver-wins span {
   font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 4rem;
@@ -202,3 +245,4 @@ h2 {
 .hidden {
   display: none;
 }
+
