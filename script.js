@@ -50,6 +50,10 @@ const arr = [
 
 let driver1;
 let driver2;
+let driver1Wins;
+let driver2Wins;
+let roundsCounter = 1;
+let score = 0;
 
 //###############################
 //FUNKCJE
@@ -72,6 +76,8 @@ function randomDriver() {
   document.querySelector(`.driver-2--name`).textContent = `${
     arr[driver2 - 1][0]
   }`;
+  driver1Wins = arr[driver1 - 1][1];
+  driver2Wins = arr[driver2 - 1][1];
 }
 
 function toggleHidden() {
@@ -84,6 +90,30 @@ function toggleHidden() {
   document.getElementById(`btn--ng`).classList.toggle(`hidden`);
 }
 
+function scoreRoundZero() {
+  document.querySelector(`.score`).textContent = score;
+  document.querySelector(`.rounds-counter`).textContent = roundsCounter;
+}
+
+function win() {
+  score++;
+  document.querySelector(`.score`).textContent = score;
+  document.getElementById(`driver-1`).classList.add(`box-shadow-win`);
+  document.getElementById(`driver-2`).classList.add(`box-shadow-win`);
+}
+
+function wrong() {
+  document.getElementById(`driver-1`).classList.add(`box-shadow-wrong`);
+  document.getElementById(`driver-2`).classList.add(`box-shadow-wrong`);
+}
+
+function restLogic() {
+  document.getElementById(`driver1-wins`).textContent = `${driver1Wins} 🏆`;
+  document.getElementById(`driver2-wins`).textContent = `${driver2Wins} 🏆`;
+  roundsCounter++;
+  document.querySelector(`.btns-hel-box`).classList.toggle(`hidden`);
+  document.getElementById(`btn--new-pair`).classList.toggle(`hidden`);
+}
 //###############################
 //LOGIKA
 //###############################
@@ -91,4 +121,45 @@ function toggleHidden() {
 btnNgEl.addEventListener(`click`, function () {
   randomDriver();
   toggleHidden();
+  scoreRoundZero();
+});
+
+btnHigherEl.addEventListener(`click`, function () {
+  if (driver1Wins > driver2Wins) {
+    win();
+  } else {
+    wrong();
+  }
+  restLogic();
+});
+
+btnEvenEl.addEventListener(`click`, function () {
+  if (driver1Wins === driver2Wins) {
+    win();
+  } else {
+    wrong();
+  }
+  restLogic();
+});
+
+btnLowerEl.addEventListener(`click`, function () {
+  if (driver1Wins < driver2Wins) {
+    win();
+  } else {
+    wrong();
+  }
+  restLogic();
+});
+
+btnNewPairEl.addEventListener(`click`, function () {
+  document.querySelector(`.btns-hel-box`).classList.toggle(`hidden`);
+  document.getElementById(`btn--new-pair`).classList.toggle(`hidden`);
+  document.querySelector(`.rounds-counter`).textContent = roundsCounter;
+  randomDriver();
+  document.getElementById(`driver-1`).classList.remove(`box-shadow-wrong`);
+  document.getElementById(`driver-2`).classList.remove(`box-shadow-wrong`);
+  document.getElementById(`driver-1`).classList.remove(`box-shadow-win`);
+  document.getElementById(`driver-2`).classList.remove(`box-shadow-win`);
+  document.getElementById(`driver1-wins`).textContent = `?`;
+  document.getElementById(`driver2-wins`).textContent = `?`;
 });
