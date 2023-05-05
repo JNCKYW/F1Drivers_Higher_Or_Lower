@@ -1,5 +1,7 @@
 # F1Drivers_Higher_Or_Lower
 
+LINK TO WORKING SITE: https://f1-higher-or-lower.netlify.app/
+
 For this project, I didn't care too much about the look of the site. Mainly, I wanted to practice the DOM manipulation, so you won't find mediaqueries or anything like this in it cause it would take me away from JS coure for longer than I wanted to 😄 Maybe after I finish JS course I will come back to this project and add some extra visuals and mediaqueries but for now I just want to focus on DOM manipulation in JS 🧐
 
 I designed and coded one website before but it was only created with HTML/CSS. Recently I ended course section about DOM manipulation so obviously I wanted to practise some of this to get more used to it. And there is no better way of practising something new than coding application all by yourself 😃! 
