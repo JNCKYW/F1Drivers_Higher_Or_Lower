@@ -114,6 +114,15 @@ function restLogic() {
   document.querySelector(`.btns-hel-box`).classList.toggle(`hidden`);
   document.getElementById(`btn--new-pair`).classList.toggle(`hidden`);
 }
+
+function removeBoxShadowWins() {
+  document.getElementById(`driver-1`).classList.remove(`box-shadow-wrong`);
+  document.getElementById(`driver-2`).classList.remove(`box-shadow-wrong`);
+  document.getElementById(`driver-1`).classList.remove(`box-shadow-win`);
+  document.getElementById(`driver-2`).classList.remove(`box-shadow-win`);
+  document.getElementById(`driver1-wins`).textContent = `?`;
+  document.getElementById(`driver2-wins`).textContent = `?`;
+}
 //###############################
 //LOGIKA
 //###############################
@@ -156,10 +165,18 @@ btnNewPairEl.addEventListener(`click`, function () {
   document.getElementById(`btn--new-pair`).classList.toggle(`hidden`);
   document.querySelector(`.rounds-counter`).textContent = roundsCounter;
   randomDriver();
-  document.getElementById(`driver-1`).classList.remove(`box-shadow-wrong`);
-  document.getElementById(`driver-2`).classList.remove(`box-shadow-wrong`);
-  document.getElementById(`driver-1`).classList.remove(`box-shadow-win`);
-  document.getElementById(`driver-2`).classList.remove(`box-shadow-win`);
-  document.getElementById(`driver1-wins`).textContent = `?`;
-  document.getElementById(`driver2-wins`).textContent = `?`;
+  removeBoxShadowWins();
 });
+
+btnResEl.addEventListener(`click`, function () {
+  roundsCounter = 1;
+  score = 0;
+  document.querySelector(`.score`).textContent = score;
+  document.querySelector(`.rounds-counter`).textContent = roundsCounter;
+  randomDriver();
+  toggleHidden();
+  document.querySelector(`.btns-hel-box`).classList.add(`hidden`);
+  document.getElementById(`btn--new-pair`).classList.add(`hidden`);
+  removeBoxShadowWins();
+});
+
