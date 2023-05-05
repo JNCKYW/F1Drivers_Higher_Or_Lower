@@ -247,3 +247,12 @@ h2 {
   display: none;
 }
 
+.box-shadow-win {
+  box-shadow: 0 0 20px 20px rgba(36, 196, 4, 0.411);
+}
+
+.box-shadow-wrong {
+  box-shadow: 0 0 20px 20px rgba(255, 44, 44, 0.61);
+}
+
+
