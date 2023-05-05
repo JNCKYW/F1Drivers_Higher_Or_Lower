@@ -1,10 +1,19 @@
 "use strict";
 
+//###############################
+//WSZYSTKIE PRZYCISKI NA STRONIE
+//###############################
+
 const btnNgEl = document.getElementById(`btn--ng`);
 const btnResEl = document.getElementById(`btn--res`);
 const btnHigherEl = document.querySelector(`.btn--higher`);
 const btnLowerEl = document.querySelector(`.btn--lower`);
+const btnEvenEl = document.querySelector(`.btn--even`);
 const btnNewPairEl = document.getElementById(`btn--new-pair`);
+
+//###############################
+//SELEKTORY
+//###############################
 
 const arr = [
   [`Sebastian Vettel`, 53],
@@ -39,20 +48,47 @@ const arr = [
   [`Mark Webber`, 9],
 ];
 
-let driver1 = Math.trunc(Math.random() * 30 + 1);
-let driver2 = Math.trunc(Math.random() * 30 + 1);
+let driver1;
+let driver2;
 
-btnNgEl.addEventListener(`click`, function () {});
+//###############################
+//FUNKCJE
+//###############################
 
-driver1 = Math.trunc(Math.random() * 30 + 1);
-driver2 = Math.trunc(Math.random() * 30 + 1);
-document.getElementById(`driver1-img`).src = `img/driver-${driver1}.jpg`;
-document.getElementById(`driver2-img`).src = `img/driver-${driver2}.jpg`;
-document.getElementById(`driver1-name`).textContent = `${arr[driver1 - 1][0]}`;
-document.querySelector(`.driver-1--name`).textContent = `${
-  arr[driver1 - 1][0]
-}`;
-document.getElementById(`driver2-name`).textContent = `${arr[driver2 - 1][0]}`;
-document.querySelector(`.driver-2--name`).textContent = `${
-  arr[driver2 - 1][0]
-}`;
+function randomDriver() {
+  driver1 = Math.trunc(Math.random() * 30 + 1);
+  driver2 = Math.trunc(Math.random() * 30 + 1);
+  document.getElementById(`driver1-img`).src = `img/driver-${driver1}.jpg`;
+  document.getElementById(`driver2-img`).src = `img/driver-${driver2}.jpg`;
+  document.getElementById(`driver1-name`).textContent = `${
+    arr[driver1 - 1][0]
+  }`;
+  document.querySelector(`.driver-1--name`).textContent = `${
+    arr[driver1 - 1][0]
+  }`;
+  document.getElementById(`driver2-name`).textContent = `${
+    arr[driver2 - 1][0]
+  }`;
+  document.querySelector(`.driver-2--name`).textContent = `${
+    arr[driver2 - 1][0]
+  }`;
+}
+
+function toggleHidden() {
+  document.getElementById(`driver-1`).classList.toggle(`hidden`);
+  document.getElementById(`driver-2`).classList.toggle(`hidden`);
+  document.querySelector(`.description`).classList.toggle(`hidden`);
+  document.querySelector(`.points-box`).classList.toggle(`hidden`);
+  document.querySelector(`.btns-hel-box`).classList.toggle(`hidden`);
+  document.getElementById(`btn--res`).classList.toggle(`hidden`);
+  document.getElementById(`btn--ng`).classList.toggle(`hidden`);
+}
+
+//###############################
+//LOGIKA
+//###############################
+
+btnNgEl.addEventListener(`click`, function () {
+  randomDriver();
+  toggleHidden();
+});
