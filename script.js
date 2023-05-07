@@ -17,7 +17,7 @@ const btnNewPairEl = document.getElementById(`btn--new-pair`);
 
 const arr = [
   [`Sebastian Vettel`, 53],
-  [`Max Verstappen`, 37],
+  [`Max Verstappen`, 38],
   [`Ayrton Senna`, 41],
   [`Alain Prost`, 51],
   [`Nigel Mansell`, 31],
